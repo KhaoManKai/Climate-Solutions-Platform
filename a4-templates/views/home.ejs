@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Solutions</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+    <%- include('partials/navbar', {page: '/'}) %>
+
+    <div class="container mx-auto">
+        <div class="hero bg-base-200 min-h-screen">
+            <div class="hero-content flex-col lg:flex-row-reverse">
+                <img src="https://drawdown.org/sites/default/files/solutions/solution_farmlandrestoration01.jpg" class="max-w-sm rounded-lg shadow-2xl" alt="Climate Solution Illustration" />
+                <div>
+                    <h1 class="text-5xl font-bold">Explore Climate Solutions</h1>
+                    <p class="py-6">Discover innovative projects tackling climate change across various sectors. Choose a category to get started:</p>
+                    <div class="flex flex-wrap justify-start gap-2">
+                        <a href="/solutions/projects" class="btn btn-outline">All Projects</a>
+                        <a href="/solutions/projects?sector=energy" class="btn btn-outline btn-primary">Energy</a>
+                        <a href="/solutions/projects?sector=transport" class="btn btn-outline btn-secondary">Transport</a>
+                        <a href="/solutions/projects?sector=agriculture" class="btn btn-outline btn-accent">Agriculture</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project cards section -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+            <!-- Project 1: Abandoned Farmland Restoration -->
+            <div class="card bg-base-100 shadow-xl">
+                <figure><img src="https://drawdown.org/sites/default/files/solutions/solution_farmlandrestoration01.jpg" alt="Abandoned Farmland Restoration" /></figure>
+                <div class="card-body">
+                    <h2 class="card-title">Abandoned Farmland Restoration</h2>
+                    <p>Restoration can bring degraded farmland back into productivity and sequester carbon in the process.</p>
+                    <div class="card-actions justify-end">
+                        <a href="/solutions/projects/1" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 2: Bicycle Infrastructure -->
+            <div class="card bg-base-100 shadow-xl">
+                <figure><img src="https://drawdown.org/sites/default/files/solutions2020/solution_bicycle_infrastructure.jpg" alt="Bicycle Infrastructure" /></figure>
+                <div class="card-body">
+                    <h2 class="card-title">Bicycle Infrastructure</h2>
+                    <p>Infrastructure is essential for supporting safe and abundant bicycle use, which curbs emissions by reducing the need for fossil-fuel-dependent transportation.</p>
+                    <div class="card-actions justify-end">
+                        <a href="/solutions/projects/3" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 3: Distributed Solar Photovoltaics -->
+            <div class="card bg-base-100 shadow-xl">
+                <figure><img src="https://drawdown.org/sites/default/files/solutions2020/solution_rooftopsolar02.jpg" alt="Distributed Solar Photovoltaics" /></figure>
+                <div class="card-body">
+                    <h2 class="card-title">Distributed Solar Photovoltaics</h2>
+                    <p>Whether grid-connected or part of stand-alone systems, rooftop solar panels and other distributed solar photovoltaic systems offer hyper-local, clean electricity generation.</p>
+                    <div class="card-actions justify-end">
+                        <a href="/solutions/projects/19" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

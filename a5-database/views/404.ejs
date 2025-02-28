@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <%- include('partials/navbar', {page: ''}) %>
+    
+    <div class="container mx-auto">
+        <div class="hero bg-base-200 min-h-screen">
+            <div class="hero-content text-center">
+                <div class="max-w-md">
+                    <img src="/image/404.jpg" alt="404 Error" class="max-w-sm rounded-lg shadow-2xl mb-8">
+                    <h1 class="text-5xl font-bold">404</h1>
+                    <p class="py-6"><%= message || "Oops! The page you're looking for seems to have vanished like our glaciers. Let's work together to find sustainable solutions, not just for our website, but for our planet too!" %></p>
+                    <a href="/" class="btn btn-primary">Return to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
