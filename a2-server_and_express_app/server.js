@@ -1,14 +1,3 @@
-/********************************************************************************
- * WEB322 – Assignment 03
- *
- * I declare that this assignment is my own work in accordance with Seneca's
- * Academic Integrity Policy:
- *
- * https://www.senecapolytechnic.ca/about/policies/academic-integrity-policy.html
- *
- * Name: _______Hin Lum Lee__________ Student ID: ___132957234______ Date: ___04-Oct-2024_______
- *
- ********************************************************************************/
 
 const express = require("express");
 const path = require("path");

@@ -1,12 +1,4 @@
-/*********************************************************************************
- * WEB322 – Assignment 1
- * I declare that this assignment is my own work in accordance with Seneca Academic Policy.
- * No part of this assignment has been copied manually or electronically from any other source
- * (including web sites) or distributed to other students.
- *
- * Name: ___Hin Lum Lee___________________ Student ID: ___132957234_______________ Date: ____10 Sep 2024________________
- *
- ********************************************************************************/
+
 const readline = require("readline");
 const fs = require("fs");
 const rl = readline.createInterface(process.stdin, process.stdout);

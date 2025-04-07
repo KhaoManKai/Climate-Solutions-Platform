@@ -1,13 +1,4 @@
 /********************************************************************************
- * WEB322 – Assignment 05
- *
- * I declare that this assignment is my own work in accordance with Seneca's
- * Academic Integrity Policy:
- *
- * https://www.senecapolytechnic.ca/about/policies/academic-integrity-policy.html
- *
- * Name: _______Hin Lum Lee__________ Student ID: ___132957234______ Date: ___16-Nov-2024_______
- *
  * Domains: https://web-assignment5-six.vercel.app
  ********************************************************************************/
 
