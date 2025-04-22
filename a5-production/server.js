@@ -1,6 +1,9 @@
 /********************************************************************************
- * Domains: https://assignment-6-six-umber.vercel.app
+ * Domains: https://hin-lum-climate-solution.vercel.app/
  ********************************************************************************/
+
+require('dotenv').config();
+console.log("MONGODB:", process.env.MONGODB);
 
 const mongoose = require('mongoose');
 const authData = require("./modules/auth-service");
@@ -9,13 +12,25 @@ const projectData = require("./modules/projects");
 const express = require('express');
 const app = express();
 
+
+
 const HTTP_PORT = process.env.PORT || 8080;
 
-mongoose.connect(process.env.MONGODB, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-}).catch(err => console.error('MongoDB connection error:', err));
+console.log("Environment variables loaded:",{
+  MONGODB: process.env.MONGODB ? "Found" : "Not found",
+  PGDATABASE: process.env.PGDATABASE ? "Found" : "Not found"
+});
 
+if(process.env.MONGODB){
+  mongoose.connect(process.env.MONGODB, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }).then(()=>{
+    console.log('MongoDB connected successfully');
+  }).catch(err => console.error('MongoDB connection error:', err));
+}else{
+  console.error('MONGODB environment variable is not defined');
+}
 
 app.use(express.static(__dirname + '/public'));
 app.use(express.urlencoded({ extended: true }));
@@ -183,7 +198,6 @@ async function initialize() {
     throw err;
   }
 }
-  
 if (require.main === module) {
   initialize().then(() => {
     app.listen(HTTP_PORT, () => {
@@ -191,6 +205,9 @@ if (require.main === module) {
     });
   }).catch((err) => {
     console.error('Failed to start server:', err);
+    app.listen(HTTP_PORT, () => {
+      console.log(`Server listening on port ${HTTP_PORT} (with initialization errors)`);
+    });
   });
 }
 module.exports = {

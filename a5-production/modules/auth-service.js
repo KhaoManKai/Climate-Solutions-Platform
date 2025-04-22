@@ -1,8 +1,11 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 require('dotenv').config();
+console.log("MONGODB:", process.env.MONGODB);
 
 let User; 
+// let db; // mongodb connection refer
 
 const userSchema = new mongoose.Schema({
   userName: { 
@@ -19,6 +22,10 @@ const userSchema = new mongoose.Schema({
 
 function initialize() {
   return new Promise(function (resolve, reject) {
+
+    // if(db){
+    //   db.close()
+    // }
     let db = mongoose.createConnection(process.env.MONGODB, {
       useNewUrlParser: true,
       useUnifiedTopology: true

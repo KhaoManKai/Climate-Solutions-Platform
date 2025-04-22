@@ -9,10 +9,33 @@ const sequelize = new Sequelize(process.env.PGDATABASE, process.env.PGUSER, proc
   dialect: 'postgres',
   port: 5432,
   dialectOptions: {
-    ssl: { rejectUnauthorized: false },
+    ssl: false 
   },
+  logging: console.log 
 });
+///////////////
+// Test connection function
+async function testConnection() {
+  try {
+    console.log("Testing database connection...");
+    console.log("Connection params:", {
+      database: process.env.PGDATABASE, 
+      user: process.env.PGUSER,
+      host: process.env.PGHOST
+    });
+    await sequelize.authenticate();
+    console.log('Connection has been established successfully.');
+    return true;
+  } catch (error) {
+    console.error('Unable to connect to the database:', error);
+    return false;
+  }
+}
 
+// Call this at the beginning to test the connection
+testConnection();
+
+///////
 const Sector = sequelize.define(
   'Sector',
   {
